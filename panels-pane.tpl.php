@@ -28,14 +28,23 @@
   <?php print render($title_prefix); ?>
   <?php if ($title): if($pane->panel=='top'||$pane->panel=='bottom'):?>
   	<div class="border_title">
-		<h2 class="base4font man2_pic_h2"><?php print $title; ?></h2>
-		<a class="man2_picblock plus_minus_link" href="#">Add</a>
+		<h2 class="base4font man2_pic_h2 <?php if($pane->panel=='top'):?>man2_picblock<?php else:?>paper_picblock<?php endif;?>"><?php print $title; ?></h2>
+		<a class="plus_minus_link" href="<?php if($pane->panel=='top') print url('node/add/editorial');else print url('add/paper');?>">Add</a>
 		<div class="clear"></div>
 	</div>
 	<?php elseif(substr($pane->panel,0,4)=='left'||substr($pane->panel,0,5)=='right'):?>
 	<div class="col_block">
 		<h2 ><?php print $title; ?></h2>
-		<a class="plus_minus_link" href="#">add</a>
+		<a class="plus_minus_link" href="<?php
+		 if($title=="News")
+		 print url('node/add/news');
+		 elseif(substr($title,0,7)=="Current")
+		 print url('node/add/event');
+		 elseif($title=="Book reviews")
+		 print url('node/add/bookreview');
+		 elseif($title=="Recent blog posts")
+		 print url('node/add/blog');		 
+		 ?>">add</a>
 		<div class="clear"></div>
 		</div>
 	<?php else:?>
@@ -68,8 +77,12 @@
     </div>
   <?php endif; ?>
 
-  <?php if ($more): ?>
-    <div class="show_more_link">
+<?php if ($pane->panel=='bottom'): ?>
+    <div class="paper-more-link">
+      <?php print '<a class="red_see_more" href="'.url('papers/popular').'">See the most popular papers</a>'; ?>
+    </div>
+  <?php elseif ($more): ?>
+    <div class="more-link">
       <?php print $more; ?>
     </div>
   <?php endif; ?>

@@ -3,11 +3,11 @@
   <div class='clear'></div>
 </div>
 
-<h1 class="title">History of contributions</h1>
+<h2 class="sub-title">History of contributions</h2>
 <div class="user-history">
 <div style="padding-left: 20px;">
-<p><a href="<?php print url('/user-history/'.$elements['#account']->name);?>" style="font-weight: bold;">Submissions</a></p>
-<p><a href="<?php print url('/user-comments/'.$elements['#account']->name);?>" style="font-weight: bold;">Comments</a></p>
-<p><a href="<?php print url('/blog/'.$elements['#account']->uid);?>" style="font-weight: bold;">Blogs </a></p>
+<p><a href="<?php print url('/user-history/'.$elements['#account']->name);?>" style="font-weight: bold;">Submissions (<?php print $historyNo['post']?>)</a></p>
+<p><a href="<?php print url('/user-comments/'.$elements['#account']->name);?>" style="font-weight: bold;">Comments (<?php print $historyNo['comment']?>)</a></p>
+<p><a href="<?php print url('/blog/'.$elements['#account']->uid);?>" style="font-weight: bold;">Blogs (<?php print $historyNo['blog']?>)</a></p>
 </div>
 </div>

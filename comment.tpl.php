@@ -1,7 +1,7 @@
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
 
-  <div class="submitted">
+  <div class="submitted small_text112">
     <?php print $submitted; ?>
     <?php print render($content['plus1_widget'])?>
   </div>

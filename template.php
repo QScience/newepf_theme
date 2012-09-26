@@ -106,6 +106,23 @@ function newepf_preprocess_page(& $variables) {
 		}
 	}
 	$variables['main_menu'] = $links;
+	
+	if(arg(0)=='editorial'){
+		$variables['add_links']=url('node/add/editorial');
+	}else if(arg(0)=='news'){
+		$variables['add_links']=url('node/add/news');
+	}else if(arg(0)=='events'||arg(0)=='fevents'||arg(0)=='pastevents'){
+		$variables['add_links']=url('node/add/event');
+	}else if(arg(0)=='bookreview'){
+		$variables['add_links']=url('node/add/bookreview');
+	}else if(arg(0)=='papers'){
+		$variables['add_links']=url('add/paper');
+	}else if(arg(0)=='blog'){
+		if($variables['action_links']){
+		$variables['add_links']=url('node/add/blog');
+		$variables['action_links']='';
+		}
+	}
 }
 /*
  * override theme_username(), add user picture info
@@ -243,6 +260,9 @@ function newepf_preprocess_node(&$variables) {
     			$variables['paper_authors']=$node->{$instance['field_name']}['und'][0]['value'];
     		}
     	}
+    	if($node->type=='editorial'){
+    		$variables['editorial']=true;
+    	}
     	if($instance['field_name']=='field_upload'){
     		if (!empty($node->{$instance['field_name']})&&$node->{$instance['field_name']}['und'][0]['filename'] != '') {
     			$url = file_create_url($node->{$instance['field_name']}['und'][0]['uri']);
@@ -293,8 +313,8 @@ function newepf_preprocess_calendar_datebox(&$vars) {
   
  // $vars['url'] = str_replace(array($month_path, $year_path), $day_path, date_pager_url($view, NULL, $date, $force_view_url));
   
-  $vars['url'] = url('events/' . $date);
-  $vars['link'] = !empty($day_path) ? l($vars['day'], $vars['url']) : $vars['day'];
+  $vars['url'] = 'events/' . $date;
+  $vars['link'] = !empty($day_path) ? l($vars['day'], $vars['url'],array('html' => TRUE)) : $vars['day'];
 }
 
 /**
@@ -318,12 +338,16 @@ function newepf_date_nav_title($params) {
   if (!empty($date_info->mini) || $link) {
     // Month navigation titles are used as links in the mini view.
     $attributes = array('title' => t('View full page month'));
-    $url = url('events/'.$date_arg);//date_pager_url($view, $granularity, $date_arg, TRUE);
-    return l($title, $url, array('attributes' => $attributes));
+    $url = 'events/'.$date_arg;//date_pager_url($view, $granularity, $date_arg, TRUE);
+    return l($title, $url, array('attributes' => $attributes,'html' => TRUE));
   }
   else {
     return $title;
   }
+}
+
+function newepf_more_link($variables) {
+  return '<div class="more-link">' . l(t('See more'), $variables['url'], array('attributes' => array('title' => $variables['title']))) . '</div>';
 }
 
 

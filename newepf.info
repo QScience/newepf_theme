@@ -5,7 +5,7 @@ version = VERSION
 core = 7.x
 engine = phptemplate
 stylesheets[all][] = css/style.css
-scripts[] = js/myscript.js
+scripts[] = js/jquery.js
 
 regions[header] = Header
 regions[highlighted] = Highlighted

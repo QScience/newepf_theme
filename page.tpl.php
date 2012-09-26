@@ -34,7 +34,12 @@
  		
  		<?php if (!isset($node)):?>
         <?php print render($title_prefix); ?>
-        <?php if ($title): ?><div class="border_title" id="page-title"><h2 class="base4font man2_pic_h2"><?php print $title; ?></h2></div><?php endif; ?>
+        <?php if ($title): ?><div class="border_title" id="page-title">
+        <h2 class="base4font man2_pic_h2"><?php print $title; ?></h2>
+        <?php if(isset($add_links)):?>
+        <a class="plus_minus_link" href="<?php print $add_links; ?>">Add</a>
+        <?php endif;?>
+        </div><?php endif; ?>
         <?php print render($title_suffix); ?>
         <?php endif?>
         
