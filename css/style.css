@@ -390,12 +390,16 @@ h2.base4font{
   margin:0;
   padding:0;
 }
+.item-list ul li{
+	margin-bottom:10px;
+}
 #right_side .item-list ul li,#right_side ul.red_arrow_li li{
 	background:url(../images/red_arrow.png) no-repeat 0 5px;
 	padding-left:10px;
 	margin-bottom:10px;
 	font-size:13px
 }
+
 .red_arrow_li2 li{background:url(../images/red_arrow.png) no-repeat 0 5px;padding-left:10px;margin-bottom:5px;font-size:13px}
 .small_text_12{color:#868686;font-size:12px}
 a.red_text_link{color:#d82622}
@@ -433,6 +437,9 @@ a.red_text_link{color:#d82622}
 	padding:3px 5px;
 	font-size:11px;
 
+}
+.more-link-inside a{
+	margin:0px;
 }
 
 #fixed_link{background:url(../images/fixed_link.png) no-repeat;width:133px;height:52px;display:block;text-indent:-9999px;position:fixed;right:0;top:176px}
