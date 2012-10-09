@@ -42,7 +42,7 @@
 		 print url('node/add/event');
 		 elseif($title=="Book reviews")
 		 print url('node/add/bookreview');
-		 elseif($title=="Recent blog posts")
+		 elseif($title=="Latest Blogs")
 		 print url('node/add/blog');		 
 		 ?>">add</a>
 		<div class="clear"></div>
