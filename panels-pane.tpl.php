@@ -67,7 +67,8 @@
   <?php else:?>
   <div class="pane-content" >
   <?php endif;?>
-     <?php print render($content); ?>
+     <?php if(is_array($content) && isset($content['blog_more'])){$blog=$content['blog_more'];hide($content['blog_more']);}
+          print render($content);?>
   </div>
   
 
@@ -84,6 +85,12 @@
   <?php elseif ($more): ?>
     <div class="more-link">
       <?php print $more; ?>
+    </div>
+  <?php elseif (is_array($content) && isset($content['blog_more'])): ?>
+      <?php print render($blog); ?>
+   <?php elseif (substr($title,0,7)=="Current"): ?>
+       <div class="more-link">
+      <a href="<?php print url('fevents')?>">Show more</a>
     </div>
   <?php endif; ?>
 </div>

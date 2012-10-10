@@ -18,11 +18,11 @@
 			<?php if ($logged_in) : ?>
 			<div class="login_user">
      			<?php print t("Hello ") ?> <strong><?php print theme('username', array('account'=>$user,'picture-size'=>15))?></strong> |
-        		<a href="<?php print url('/user/logout')?>"><?php print t("Log out") ?></a>
+        		<a href="<?php print url('user/logout')?>"><?php print t("Log out") ?></a>
         	</div>
      		<?php else: ?>
-     			<a href="<?php print url('/user/register')?>" class="button_block black_button" style="margin-left:100px"><?php print t("Join Now")?>!</a>
-				<a href="<?php print url('/user/login')?>" class="button_block red_button"><?php print t("Sign In")?></a>
+     			<a href="<?php print url('user/register')?>" class="button_block black_button" style="margin-left:100px"><?php print t("Join Now")?>!</a>
+				<a href="<?php print url('user/login')?>" class="button_block red_button"><?php print t("Sign In")?></a>
       		<?php endif ?>
 		</div>
 		

@@ -347,6 +347,6 @@ function newepf_date_nav_title($params) {
 }
 
 function newepf_more_link($variables) {
-  return '<div class="more-link">' . l(t('See more'), $variables['url'], array('attributes' => array('title' => $variables['title']))) . '</div>';
+  return '<div class="more-link">' . l(t('Show more'), $variables['url'], array('attributes' => array('title' => $variables['title']))) . '</div>';
 }
 

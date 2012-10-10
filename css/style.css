@@ -160,8 +160,12 @@ div.panel-pane div.node {
 }
 .center-wrapper{
 	margin-top:20px;
+	height:100%;
 }
-.textblock{padding:15px 18px 0 18px;font-size:13px;line-height:16px;min-height:190px}
+.panel-pane .pager{
+	display:none;
+}
+.textblock{padding:15px 18px 0 18px;font-size:13px;line-height:16px;min-height:190px;min-height:230px;}
 .small_text11{font-size:11px;color:#5b5b5b}
  .small_text12{font-size:12px;color:#5b5b5b}
 .small_text112{font-size:11px;color:#868686;line-height:13px}
@@ -430,6 +434,8 @@ a.red_text_link{color:#d82622}
 .more-link{
 	margin-top:8px;
 	text-align:right;
+	bottom:0;
+	position:relative;
 }
 .more-link a{
 	color:#fff;
@@ -461,3 +467,6 @@ a.red_text_link{color:#d82622}
 	background-image:none;
 }
 /*calendar end*/
+#comment-body-add-more-wrapper .form-textarea{
+	min-height:300px;
+}
