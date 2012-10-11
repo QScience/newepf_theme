@@ -80,7 +80,7 @@
 
 <?php if ($pane->panel=='bottom'): ?>
     <div class="paper-more-link">
-      <?php print '<a class="red_see_more" href="'.url('papers/popular').'">See the most popular papers</a>'; ?>
+      <?php print '<a class="red_see_more" href="'.url('papers/popular').'">Show top papers</a>'; ?>
     </div>
   <?php elseif ($more): ?>
     <div class="more-link">
