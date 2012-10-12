@@ -244,8 +244,9 @@ h2.base4font a:hover{
 .content_box>div>.view,.popular-papers,.content_box>div>.node{
 padding: 0 0 0 23px;
 }
-.node-blog{
-	min-height:20px
+.content_box>div>.node-blog{
+	min-height:20px;
+	padding-bottom:5px
 }
 #block-qtr-popular>.content>.content_box{
 	padding:0;
