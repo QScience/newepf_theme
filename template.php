@@ -281,8 +281,10 @@ function newepf_preprocess_node(&$variables) {
   	       ->condition('m.nid', $node->nid)->execute()->fetchAll();
    if($obj){
    	$variables['download']=  $output.' ('.(empty($statistics['totalcount'])?0:$statistics['totalcount']).' views, '.$obj[0]->downloadNo.' download, '.$node->comment_count.' comments)';
-   }else{
+   }else if(isset($node->comment_count)){
    	 $variables['download']=  $output.' ('.(empty($statistics['totalcount'])?0:$statistics['totalcount']).' views, 0 download, '.$node->comment_count.' comments)';
+   }else{
+   	 $variables['download']=  $output.' ('.(empty($statistics['totalcount'])?0:$statistics['totalcount']).' views, 0 download, 0 comments)';
    }
   }
   if($variables['page']){
