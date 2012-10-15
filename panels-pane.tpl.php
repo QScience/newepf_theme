@@ -79,8 +79,11 @@
   <?php endif; ?>
 
 <?php if ($pane->panel=='bottom'): ?>
-    <div class="paper-more-link">
+  <!--  <div class="paper-more-link">
       <?php print '<a class="red_see_more" href="'.url('papers/popular').'">Show top papers</a>'; ?>
+    </div> -->
+    <div class="more-link">
+      <a href="<?php print url('papers')?>">Show more</a>
     </div>
   <?php elseif ($more): ?>
     <div class="more-link">
