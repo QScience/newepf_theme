@@ -172,6 +172,9 @@ div.panel-pane div.node {
 a.username{
 	color:#d61c18
 }
+.user-history a.username:hover{
+	color:#d61c18 !important;
+}
 .panel-col-bottom{
 	padding-top:30px;
 }
@@ -300,15 +303,33 @@ padding-right:2px;
 .profile .field {
     display:table;
 }
-.profile{
-   border-bottom: 2px solid #CCCCCC;
-}
 .profile dt{
    margin-top:15px;
 }
-.user-history p{
-	padding-top:10px;
+.user-history{
+	text-align: right;
 	font-size:16px;
+	font-weight: bold;
+	margin-top:13px;
+	margin-bottom:20px;
+}
+.content_box .user-history{
+		margin-top:-13px;
+}
+.user-score h4{
+	display: block;
+	float:left;
+	padding-top:2px;
+	padding-right:2px;
+}
+a.help-icon{
+	    background: url("../images/help-icon.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 20px;
+    width:20px;
+    float:left;
+    text-indent: -9999px;
+    cursor:pointer;
 }
 /* user's page end */
 #search_bar{background:url(../images/searc_bar_bg.png) repeat-x;height:54px;margin-top:15px;padding:10px 0 0 23px}

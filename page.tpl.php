@@ -42,6 +42,12 @@
         </div><?php endif; ?>
         <?php print render($title_suffix); ?>
         <?php endif?>
+        <?php if(arg(0)=='user-history'||arg(0)=='user-comments'):?><!--profile history page -->
+        <?php $curuser=user_load_by_name(arg(1));print theme('user_profile', array('elements'=>array('#account'=>$curuser),'isprofilepage'=>true));?>
+        <?php endif;?>
+        <?php if(arg(0)=='blog'):?><!--profile history page -->
+        <?php $curuser=user_load(arg(1));print theme('user_profile', array('elements'=>array('#account'=>$curuser),'isprofilepage'=>true));?>
+        <?php endif;?>
         
         <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
         <?php print render($page['help']); ?>
