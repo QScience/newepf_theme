@@ -28,7 +28,9 @@
 		
 		<div id="content_block">
 			<div id="left_side"><!-- left side -->
+			<?php if(!(arg(0)=='blog' && arg(1))):?>
 			<?php print $messages; ?>
+			<?php endif;?>
  	
  		<?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
  		
@@ -45,8 +47,9 @@
         <?php if(arg(0)=='user-history'||arg(0)=='user-comments'):?><!--profile history page -->
         <?php $curuser=user_load_by_name(arg(1));print theme('user_profile', array('elements'=>array('#account'=>$curuser),'isprofilepage'=>true));?>
         <?php endif;?>
-        <?php if(arg(0)=='blog'):?><!--profile history page -->
+        <?php if(arg(0)=='blog' && arg(1)):?><!--profile history page -->
         <?php $curuser=user_load(arg(1));print theme('user_profile', array('elements'=>array('#account'=>$curuser),'isprofilepage'=>true));?>
+        <?php print $messages; ?>
         <?php endif;?>
         
         <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
