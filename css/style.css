@@ -178,7 +178,7 @@ a.username{
 .panel-col-bottom{
 	padding-top:30px;
 }
-.panel-panel .plus1_block{
+.panel-panel .plus1_block,.panel-panel .teaser-content{
 	display:none;
 }
 #paper_info_block  .plus1_block{

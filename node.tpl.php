@@ -44,17 +44,24 @@
   
   <?php endif; ?>
     <?php print render($title_suffix); ?>
-  
+  <?php if(!$page){
+  	if(isset($content['plus1_widget'])) hide($content['plus1_widget']);
+      hide($content['comments']);
+      hide($content['links']);
+    print '<div class="teaser-content">'.strip_tags(render($content)).'...</div>';
+   }
+  ?>
 </div>
 <div class="clear"></div>
    </div>
   <div class="content"<?php print $content_attributes; ?>>
-    <?php
+    <?php if($page){
       // We hide the comments and links now so that we can render them later.
      if(isset($content['plus1_widget'])) hide($content['plus1_widget']);
       hide($content['comments']);
       hide($content['links']);
       print render($content);
+    }
     ?>
   </div>
 
