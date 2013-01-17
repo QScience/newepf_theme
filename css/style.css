@@ -68,12 +68,12 @@ input, select {vertical-align:middle;}
 }
 #menu li {
 	float: left;
-	margin: 0 3px;
+	margin: 0 0px;
 	display: inline;
 	position: relative;
 }
 #menu li a {
-	padding: 0 0 5px 10px;
+	padding: 0 0 5px 0px;
 }
 
 #menu ul ul {
@@ -178,7 +178,7 @@ a.username{
 .panel-col-bottom{
 	padding-top:30px;
 }
-.panel-panel .plus1_block,.panel-panel .teaser-content{
+.panel-panel .plus1_block,.center-wrapper .panel-panel .teaser-content,.panel-col-bottom .teaser-content{
 	display:none;
 }
 #paper_info_block  .plus1_block{

@@ -4,7 +4,7 @@
 		<div id="header">
 			<div class="logo">
 				<h1>
-					<a href="<?php print $front_page ?>" title="<?php print t('Home') ?>">EconoPhysics</a>
+					<a href="<?php print $front_page;?>" title="<?php print t('Home') ?>">EconoPhysics</a>
 				</h1>
 			</div>
 			<div id="menu">

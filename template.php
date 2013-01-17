@@ -117,6 +117,8 @@ function newepf_preprocess_page(& $variables) {
 		$variables['add_links']=url('node/add/bookreview');
 	}else if(arg(0)=='papers'){
 		$variables['add_links']=url('add/paper');
+	}else if(arg(0)=='job'){
+		$variables['add_links']=url('node/add/job-opening');
 	}else if(arg(0)=='blog'){
 		if($variables['action_links']){
 		$variables['add_links']=url('node/add/blog');
