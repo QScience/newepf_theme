@@ -40,8 +40,8 @@
 		 print url('node/add/news');
 		 elseif(substr($title,0,7)=="Current")
 		 print url('node/add/event');
-		 elseif($title=="Job opening")
-		 print url('node/add/job-opening');
+		 elseif($title=="Job openings")
+		 print url('node/add/jobs-opening');
 		 elseif($title=="Latest Blogs")
 		 print url('node/add/blog');		 
 		 ?>">add</a>
