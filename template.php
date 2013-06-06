@@ -376,15 +376,15 @@ function newepf_form_alter(&$form, &$form_state, $form_id) {
 
       if (user_access('use custom search')) {
         // Title.
-        $form[$form_id]['#title'] = variable_get('custom_search_' . $delta . 'label', CUSTOM_SEARCH_LABEL_DEFAULT);
+        $form[$form_id]['#title'] = variable_get('custom_search_' . $delta . 'label', 'CUSTOM_SEARCH_LABEL_DEFAULT');
         $form[$form_id]['#title_display'] = (!variable_get('custom_search_' . $delta . 'label_visibility', FALSE)) ? 'invisible' : 'before' ;
 
         // Search box.
         $form[$form_id]['#default_value'] = variable_get('custom_search_' . $delta . 'text', '');
         $form[$form_id]['#weight'] = variable_get('custom_search_' . $delta . 'search_box_weight', 0);
         $form[$form_id]['#attributes'] = array('class' => array('custom-search-default-value', 'custom-search-box'));
-        $form[$form_id]['#size'] = variable_get('custom_search_' . $delta . 'size', CUSTOM_SEARCH_SIZE_DEFAULT);
-        $form[$form_id]['#maxlength'] = variable_get('custom_search_' . $delta . 'max_length', CUSTOM_SEARCH_MAX_LENGTH_DEFAULT);
+        $form[$form_id]['#size'] = variable_get('custom_search_' . $delta . 'size', 'CUSTOM_SEARCH_SIZE_DEFAULT');
+        $form[$form_id]['#maxlength'] = variable_get('custom_search_' . $delta . 'max_length', 'CUSTOM_SEARCH_MAX_LENGTH_DEFAULT');
 
         // Default text.
         $form['default_text'] = array(
@@ -493,7 +493,7 @@ function newepf_form_alter(&$form, &$form_state, $form_id) {
         }
 
         // Submit button.
-        $form['actions']['submit']['#value'] = variable_get('custom_search_' . $delta . 'submit_text', CUSTOM_SEARCH_SUBMIT_TEXT_DEFAULT);
+        $form['actions']['submit']['#value'] = variable_get('custom_search_' . $delta . 'submit_text', 'CUSTOM_SEARCH_SUBMIT_TEXT_DEFAULT');
 
         if (variable_get('custom_search_' . $delta . 'image_path', '') != '') {
           $form['actions']['submit']['#type'] = 'image_button';
